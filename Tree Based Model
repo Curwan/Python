@@ -1,0 +1,48 @@
+# Import libraries
+import pandas as pd
+from sklearn.tree import DecisionTreeRegressor, plot_tree
+import matplotlib.pyplot as plt
+import numpy as np
+#Import data
+df = pd.read_csv('Boston.csv', delimiter = ',')
+
+#Expore the size of the data set
+df.shape
+#Expore the type of data and feature names
+df.head(8)
+#Dealing with missing values
+print(df.isnull().sum()) #displays the number of null values for each finding
+#Check whether or not there are ANY null values in the dataframe
+print("Dataframe has null values?", df.isnull().values.any())
+
+#Use crim, rm, age as features and medv as response
+X = df.loc[:,["crim","rm","age"]]
+y = df.loc[:,["medv"]]
+#X.(head) and y.(head) / y.(tail)
+#FIT TRee BAsed Regression Model
+regressor = DecisionTreeRegressor(random_state=0)
+regressor = regressor.fit(X,y)
+#Visualise
+plt.figure()
+plot_tree(regressor, feature_names=X.columns)
+plt.show()
+plt.figure(figsize=[5,5] dpi=100)
+plot_tree(regressor, max_depth=1, feature_names=X.columns, impurities=False)
+plt.show()
+
+#Draw scatterplot of number of rooms vs crime rate.
+plt.figure(figsize=[6,3], dpi=100)
+cutx, cuty = 4.5, 15
+plt.ylim(0.cuty)
+plt.xlim(cutx,9)
+plt.xlabel('Number of Rooms')
+plt.ylabel('Crime rate')
+plt.title('Median house value')
+plt.scatter(x=X['rm'],y=X[crim'],c=df['medv'])
+
+print('\n Average medv for entire sample = ',
+df['medv'].mean(),
+'\n Average medv for left node (depth=1) = ',
+df.loc[df['rm']<6.941]['medv'].mean(),
+'\n Number of samples on right node (depth=1) =',
+len(df.loc[df['rm']>6.941].['medv']))
