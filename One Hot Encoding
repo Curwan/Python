@@ -1,0 +1,4 @@
+ohe = OneHotEncoder(category="auto")
+Xd = ohe.fit_transform(df.DeptID.values.reshape(-1,1)).toarray()
+df_ohe = pd.DataFrame(Xd, columns =['DeptID_'+str(int(i)) for i in range(Xd.shape[1])])
+df_to_use = pd.concat([df_to_use, df_ohe], axis =1)
