@@ -7,7 +7,8 @@ import numpy as np
 #Import data
 df = pd.read_csv('Boston.csv', delimiter = ',')
 
-#Expore the size of the data set
+#Expore the size of the data set 
+
 df.shape
 #Expore the type of data and feature names
 df.head(8)
