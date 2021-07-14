@@ -52,3 +52,38 @@ plt.title('Dendrogram')
 plt.ylabel('Euclidean distances')
 plt.show()   #the more dimentions you have, the more difficult it is to identify clusters
 
+ # Import data (import on first 3,000 rows)
+df = pd.read_csv("household_power_consumption.txt",delimiter=";",nrows=2*60*24)
+
+# Remove '?' entries
+df = df.replace('?',np.nan)
+
+# Explore the size of the data set
+df.shape
+
+# Explore the type of data and feature names
+df.head()
+
+# Remove the Date and Time features #these could influence usage,ex. season and cooking time
+# Time of day could be a useful feature but would require re-coding into a continuous variable, e.g. 0–1
+# Date = seasonality, Time = pattern of daily use
+
+X = df.iloc[:,2:]
+
+# Find the optimal number of clusters using a dendrogram
+# Note that it may take a while for this graph to be generated
+
+dendro = dendrogram(linkage(X, method  = "ward"))
+plt.title('Dendrogram')
+plt.ylabel('Euclidean distances')
+plt.show()
+
+# Fit with three clusters
+hc = AgglomerativeClustering(n_clusters = 3, affinity = 'euclidean', linkage ='ward')
+
+y_hc=hc.fit_predict(X)
+
+# Set up a dataframe with cluster levels
+Xnew = X.copy()
+Xnew["CLUSTERS"] = y_hc
+Xnew.sample(10, random_state=0)
