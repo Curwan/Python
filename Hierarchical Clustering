@@ -1,2 +1,54 @@
 #HIERARCHICAL CLUSTERING IN PYTHON
 
+# Import libraries
+import pandas as pd
+from sklearn.cluster import AgglomerativeClustering
+from scipy.cluster.hierarchy import dendrogram, linkage
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+import numpy as np
+import seaborn as sns
+
+#SIMPLE EXAMPLE
+
+# Scikit-learn has a make_blobs function to make data sets
+from sklearn.datasets import make_blobs
+
+# Create data set
+X, y = make_blobs(n_samples=60, n_features=2, 
+                  centers=4, cluster_std=1.7,
+                  random_state=10, shuffle=True)
+
+# Plot
+plt.title('Artificially created data set')
+plt.scatter(X[:, 0], X[:, 1], c='yellow', marker='o', edgecolor='blue', s=30)
+plt.show()
+
+# Find the optimal number of clusters using a dendrogram
+dendro = dendrogram(linkage(X, method  = "ward"))
+plt.title('Dendrogram')
+plt.ylabel('Euclidean distances')
+plt.show()
+
+# The same example, but more dispersed from the centroid
+X, y = make_blobs(n_samples=60, n_features=2, 
+                  centers=4, cluster_std=5, #higher stdev
+                  random_state=10, shuffle=True)
+
+# Find the optimal number of clusters using a dendrogram
+dendro = dendrogram(linkage(X, method  = "ward"))
+plt.title('Dendrogram')
+plt.ylabel('Euclidean distances')
+plt.show()
+
+# Create a more typical four-dimensional data set with 8 clusters
+X, y = make_blobs(n_samples=160, n_features=4, #4dimentional space, 8blobs
+                  centers=8, cluster_std=2,
+                  random_state=10, shuffle=True)
+
+# Find the optimal number of clusters using a dendrogram
+dendro = dendrogram(linkage(X, method  = "ward"))
+plt.title('Dendrogram')
+plt.ylabel('Euclidean distances')
+plt.show()   #the more dimentions you have, the more difficult it is to identify clusters
+
