@@ -87,3 +87,5 @@ y_hc=hc.fit_predict(X)
 Xnew = X.copy()
 Xnew["CLUSTERS"] = y_hc
 Xnew.sample(10, random_state=0)
+
+
