@@ -89,3 +89,7 @@ Xnew["CLUSTERS"] = y_hc
 Xnew.sample(10, random_state=0)
 
 
+# Plot voltage and the sub_metering stations
+# YOUR CODE HERE
+var = ["Voltage", "Sub_metering_1", "Sub_metering_2", "Sub_metering_3"]
+sns.pairplot(Xnew, vars=var, hue="CLUSTERS", palette=sns.color_palette("hls", 3))
