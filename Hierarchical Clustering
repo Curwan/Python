@@ -88,6 +88,7 @@ Xnew = X.copy()
 Xnew["CLUSTERS"] = y_hc
 Xnew.sample(10, random_state=0)
 
+...
 
 # Plot voltage and the sub_metering stations
 # YOUR CODE HERE
