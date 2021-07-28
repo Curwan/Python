@@ -1,0 +1,10 @@
+Algorithm to find all paths of length 2 starting at vertex a
+
+INPUT
+OUTPUT
+
+vertexList = V/{a}
+pathList = 0
+for v E* vertexList do
+  if (a,v) E* E then
+    Add (a,v) to pathList
