@@ -90,8 +90,10 @@ Xnew.sample(10, random_state=0)
 
 ...
 
-# Plot voltage and the sub_metering stations
 # YOUR NEW CODE HERE
+
+# Plot voltage and the sub_metering stations
+
 
 
 var = ["Voltage", "Sub_metering_1", "Sub_metering_2", "Sub_metering_3"]
