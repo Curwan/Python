@@ -8,3 +8,5 @@ pathList = 0
 for v E* vertexList do
   if (a,v) E* E then
     Add (a,v) to pathlist
+
+add
