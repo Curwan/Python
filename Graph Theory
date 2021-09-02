@@ -1,6 +1,7 @@
 Algorithm to find all paths of length 2 starting at vertex a
 
 INPUT
+
 OUTPUT
 
 vertexList = V/{a}
