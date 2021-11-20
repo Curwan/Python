@@ -10,3 +10,10 @@ print(y)
 x = 10//4
 print(x)
 x**5
+format(x,'.1f')
+
+s = "apple"
+print(s[0])
+print(s[1])
+print(s[5])
+
