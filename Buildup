@@ -41,3 +41,7 @@ mx = max(5,54,28,2.314)
 mn = min(5,54,28,2.314)
 print(mn,mx)
 l = [1, 18, 4, 3, -2]
+l
+sum(l)
+l = sorted(l)
+l
