@@ -17,3 +17,12 @@ print(s[0])
 print(s[1])
 print(s[5])
 
+#My first Python script
+def hello():
+  print("Hello World")
+hello()
+
+#Modulo Operator (Arythmatic Operation)
+x= -10
+y = 5
+abs(x*y)
