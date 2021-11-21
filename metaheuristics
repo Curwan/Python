@@ -1,0 +1,4 @@
+import eightqueens as q8
+s1 = q8.random_solution()
+q8.print_solution(s1)
+print("Fitness of random solution above:"+str(q8.f(s1)))
