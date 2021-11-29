@@ -38,6 +38,7 @@ format(x, ".1f")
 x   #Note: format func does not change value of x
 y = round(x,3)
 y
+
 mx = max(5,54,28,2.314)
 mn = min(5,54,28,2.314)
 print(mn,mx)
