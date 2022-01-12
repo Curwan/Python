@@ -4,7 +4,6 @@
 1+2
 
 print("Some words")
-
 print("banana", 28, 56.234)
 print("2+3=",2+3)
 
