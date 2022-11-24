@@ -1,0 +1,18 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from pandas import read_csv
+from pandas.plotting import scatter_matrix
+from matplotlib import pyplot
+
+survey = read_csv("delskv-1994-2014.csv")
+
+data1994 = read_csv("1994_A.csv")
+
+new_survey=survey[['ProfileID','Survey','Municipality','cb_size','floor_area','monthly_income']]
+
+
+new_survey.head()
+
+
+
