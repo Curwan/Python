@@ -11,8 +11,11 @@ data1994 = read_csv("1994_A.csv")
 
 new_survey=survey[['ProfileID','Survey','Municipality','cb_size','floor_area','monthly_income']]
 
+new=data1994[['ProfileID','Datefield','Unitsread']]
 
-new_survey.head()
+ID121=new_1994[(data1994["ProfileID"]==121)]
+
+full_1994 = ID121.append(new_survey, ignore_index=True)
 
 
 
