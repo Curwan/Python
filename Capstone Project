@@ -13,16 +13,28 @@ new_survey = new_survey.loc[(new_survey['ProfileID']>120)]
 new_survey = new_survey.loc[(new_survey['ProfileID']<262)]
 new_survey=new_survey.set_index('ProfileID')
 
-
 new_1994 = data1994[['ProfileID','Datefield','Unitsread']]
 new_1994 = new_1994.sort_values(by=['ProfileID','Datefield'])
 
-DEC94_12PM = new_1994[(data1994["Datefield"]=='1994-12-25 12:00:00')]
+DEC94_12PM = new_1994[(data1994["Datefield"]=='1994-12-25 12:00:00')]***
 DEC94_12PM = DEC94_12PM.loc[(DEC94_12PM['ProfileID']>120)]
 DEC94_12PM=DEC94_12PM.set_index('ProfileID')
 
-
 FULL_DEC94_12PM = pd.merge(DEC94_12PM, new_survey, left_index=True, right_index=True)
+FULL_DEC94_12PM=FULL_DEC94_12PM[['Unitsread','monthly_income']]
+
+plt.scatter(FULL['Unitsread'], FULL['monthly_income'])
+plt.title("Electricity use on 25 Dec 1994 at 12pm")
+plt.xlabel("Units Read")
+plt.ylabel("Household Monthly Income")
+plt.show()
+
+
+
+
+
+
+
 
 
 
