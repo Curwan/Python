@@ -11,7 +11,25 @@ data1994 = read_csv("1994_A.csv")
 
 new_survey=survey[['ProfileID','Survey','Municipality','cb_size','floor_area','monthly_income']]
 
+new_survey = new_survey.loc[(new_survey['ProfileID']>120)]
+
+new_survey = new_survey.loc[(new_survey['ProfileID']<262)]
+
 new=data1994[['ProfileID','Datefield','Unitsread']]
+
+new_1994=new_1994.sort_values(by=['ProfileID','Datefield'])
+
+DEC94_12PM = new_1994[(data1994["Datefield"]=='1994-12-25 12:00:00')]
+
+DEC94_12PM = DEC94_12PM.loc[(DEC94_12PM['ProfileID']>120)]
+
+new_survey = new_survey.loc[(new_survey['ProfileID']<262)]
+
+
+
+
+
+
 
 ID121=new_1994[(data1994["ProfileID"]==121)]
 
