@@ -16,7 +16,7 @@ new_survey=new_survey.set_index('ProfileID')
 new_1994 = data1994[['ProfileID','Datefield','Unitsread']]
 new_1994 = new_1994.sort_values(by=['ProfileID','Datefield'])
 
-DEC94_12PM = new_1994[(data1994["Datefield"]=='1994-12-25 12:00:00')]***
+DEC94_12PM = new_1994[(data1994["Datefield"]=='1994-12-25 12:00:00')]**
 DEC94_12PM = DEC94_12PM.loc[(DEC94_12PM['ProfileID']>120)]
 DEC94_12PM=DEC94_12PM.set_index('ProfileID')
 
