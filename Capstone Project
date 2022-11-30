@@ -24,6 +24,7 @@ FULL_DEC94_12PM = pd.merge(DEC94_12PM, new_survey, left_index=True, right_index=
 FULL_DEC94_12PM=FULL_DEC94_12PM[['Unitsread','monthly_income']]
 
 plt.scatter(FULL['Unitsread'], FULL['monthly_income'])
+
 plt.title("Electricity use on 25 Dec 1994 at 12pm")
 plt.xlabel("Units Read")
 plt.ylabel("Household Monthly Income")
